@@ -73,7 +73,7 @@ Before you begin, ensure you have the following installed on your system:
 2. Navigate to the web app directory:
 
    ```bash
-   cd apps/web
+   cd apps/web and do bun install
    ```
 
 3. Copy `.env.example` to `.env.local`:
