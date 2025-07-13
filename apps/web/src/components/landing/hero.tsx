@@ -70,7 +70,7 @@ export function Hero({ signupCount }: HeroProps) {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4.5rem)] supports-[height:100dvh]:min-h-[calc(100dvh-4.5rem)] flex flex-col justify-between items-center text-center px-4">
+    <div className="min-h-[calc(100vh-4.5rem)] supports-[height:100dvh]:min-h-[calc(100dvh-4.5rem)] flex flex-col justify-between items-center text-center px-4 sm:px-6">
       <Image
         className="absolute top-0 left-0 -z-50 size-full object-cover"
         src="/landing-page-bg.png"
@@ -88,13 +88,13 @@ export function Hero({ signupCount }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="inline-block font-bold tracking-tighter text-4xl md:text-[4rem]"
+          className="inline-block font-bold tracking-tighter text-3xl sm:text-4xl md:text-[4rem]"
         >
           <h1>The Open Source</h1>
-          <div className="flex justify-center gap-4 leading-[4rem] mt-0 md:mt-2">
-            <div className="relative -rotate-[2.76deg] max-w-[250px] md:max-w-[454px] mt-2">
+          <div className="flex justify-center gap-2 sm:gap-4 leading-[3rem] sm:leading-[4rem] mt-1 md:mt-2">
+            <div className="relative -rotate-[2.76deg] max-w-[200px] sm:max-w-[250px] md:max-w-[454px] mt-1 sm:mt-2">
               <Image src="/frame.svg" height={79} width={459} alt="frame" />
-              <span className="absolute inset-0 flex items-center justify-center">
+              <span className="absolute inset-0 flex items-center justify-center text-sm sm:text-base md:text-[1em]">
                 Video Editor
               </span>
             </div>
@@ -102,7 +102,7 @@ export function Hero({ signupCount }: HeroProps) {
         </motion.div>
 
         <motion.p
-          className="mt-10 text-base sm:text-xl text-muted-foreground font-light tracking-wide max-w-xl mx-auto"
+          className="mt-6 sm:mt-8 md:mt-10 text-sm sm:text-base md:text-xl text-muted-foreground font-light tracking-wide max-w-sm sm:max-w-xl mx-auto px-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
@@ -112,20 +112,20 @@ export function Hero({ signupCount }: HeroProps) {
         </motion.p>
 
         <motion.div
-          className="mt-12 flex gap-8 justify-center"
+          className="mt-8 sm:mt-10 md:mt-12 flex gap-8 justify-center px-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <form
             onSubmit={handleSubmit}
-            className="flex gap-3 w-full max-w-lg flex-col sm:flex-row"
+            className="flex gap-2 sm:gap-3 w-full max-w-lg flex-col sm:flex-row"
           >
             <div className="relative w-full">
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="h-11 text-base flex-1"
+                className="h-10 sm:h-11 text-sm sm:text-base flex-1"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isSubmitting}
@@ -135,7 +135,7 @@ export function Hero({ signupCount }: HeroProps) {
             <Button
               type="submit"
               size="lg"
-              className="px-6 h-11 text-base !bg-foreground"
+              className="px-4 sm:px-6 h-10 sm:h-11 text-sm sm:text-base !bg-foreground"
               disabled={isSubmitting}
             >
               <span className="relative z-10">

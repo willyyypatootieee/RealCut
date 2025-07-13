@@ -12,6 +12,11 @@ export default {
     extend: {
       screens: {
         xs: "480px",
+        // Mobile-first breakpoint
+        'mobile-lg': '414px',
+        // Touch device detection
+        'touch': { 'raw': '(hover: none) and (pointer: coarse)' },
+        'no-touch': { 'raw': '(hover: hover) and (pointer: fine)' }
       },
       fontSize: {
         base: "0.95rem",

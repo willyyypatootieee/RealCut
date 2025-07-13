@@ -8,6 +8,12 @@ const twitterImageUrl = "/opengraph-image.jpg";
 export const baseMetaData: Metadata = {
     title: title,
     description: description,
+    viewport: {
+        width: 'device-width',
+        initialScale: 1,
+        maximumScale: 1,
+        userScalable: false,
+    },
     openGraph: {
         title: title,
         description: description,

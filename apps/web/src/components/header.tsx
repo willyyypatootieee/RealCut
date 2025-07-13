@@ -34,23 +34,25 @@ export function Header() {
   );
 
   const rightContent = (
-    <nav className="flex items-center gap-3">
-      <Link href="/contributors">
+    <nav className="flex items-center gap-2 md:gap-3">
+      <Link href="/contributors" className="hidden sm:block">
         <Button variant="text" className="text-sm p-0">
           Contributors
         </Button>
       </Link>
       {process.env.NODE_ENV === "development" ? (
         <Link href="/projects">
-          <Button size="sm" className="text-sm ml-4">
-            Projects
+          <Button size="sm" className="text-xs md:text-sm ml-2 md:ml-4">
+            <span className="hidden sm:inline">Projects</span>
+            <span className="sm:hidden">App</span>
             <ArrowRight className="h-4 w-4" />
           </Button>
         </Link>
       ) : (
         <Link href="https://github.com/OpenCut-app/OpenCut" target="_blank">
-          <Button size="sm" className="text-sm ml-4">
-            GitHub {star}+
+          <Button size="sm" className="text-xs md:text-sm ml-2 md:ml-4">
+            <span className="hidden sm:inline">GitHub {star}+</span>
+            <span className="sm:hidden">GitHub</span>
             <ArrowRight className="h-4 w-4" />
           </Button>
         </Link>
@@ -59,9 +61,9 @@ export function Header() {
   );
 
   return (
-    <div className="mx-4 md:mx-0">
+    <div className="mx-2 sm:mx-4 md:mx-0">
       <HeaderBase
-        className="bg-accent border rounded-2xl max-w-3xl mx-auto mt-4 pl-4 pr-[14px]"
+        className="bg-accent border rounded-xl md:rounded-2xl max-w-3xl mx-auto mt-2 md:mt-4 pl-3 md:pl-4 pr-3 md:pr-[14px]"
         leftContent={leftContent}
         rightContent={rightContent}
       />

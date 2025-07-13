@@ -21,16 +21,16 @@ export function EditorHeader() {
     <div className="flex items-center gap-2">
       <Link
         href="/projects"
-        className="font-medium tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity"
+        className="font-medium tracking-tight flex items-center gap-1 sm:gap-2 hover:opacity-80 transition-opacity"
       >
         <ChevronLeft className="h-4 w-4" />
-        <span className="text-sm">{activeProject?.name}</span>
+        <span className="text-xs sm:text-sm truncate max-w-[120px] sm:max-w-none">{activeProject?.name}</span>
       </Link>
     </div>
   );
 
   const centerContent = (
-    <div className="flex items-center gap-2 text-xs">
+    <div className="hidden sm:flex items-center gap-2 text-xs">
       <span>
         {formatTimeCode(
           getTotalDuration(),
@@ -46,11 +46,11 @@ export function EditorHeader() {
       <Button
         size="sm"
         variant="primary"
-        className="h-7 text-xs"
+        className="h-7 text-xs px-2 sm:px-3"
         onClick={handleExport}
       >
         <Download className="h-4 w-4" />
-        <span className="text-sm">Export</span>
+        <span className="hidden sm:inline text-sm ml-1">Export</span>
       </Button>
     </nav>
   );
@@ -60,7 +60,7 @@ export function EditorHeader() {
       leftContent={leftContent}
       centerContent={centerContent}
       rightContent={rightContent}
-      className="bg-background h-[3.2rem] px-4"
+      className="bg-background h-[3.2rem] px-2 sm:px-4"
     />
   );
 }

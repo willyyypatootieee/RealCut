@@ -10,8 +10,10 @@ import {
 import { MediaPanel } from "../../../components/editor/media-panel";
 import { PropertiesPanel } from "../../../components/editor/properties-panel";
 import { Timeline } from "../../../components/editor/timeline";
+import { MobileTimelineWrapper } from "@/components/mobile-timeline-wrapper";
 import { PreviewPanel } from "../../../components/editor/preview-panel";
 import { EditorHeader } from "@/components/editor-header";
+import { MobileEditorTabs } from "@/components/mobile-editor-tabs";
 import { usePanelStore } from "@/stores/panel-store";
 import { useProjectStore } from "@/stores/project-store";
 import { EditorProvider } from "@/components/editor-provider";
@@ -58,9 +60,31 @@ export default function Editor() {
       <div className="h-screen w-screen flex flex-col bg-background overflow-hidden">
         <EditorHeader />
         <div className="flex-1 min-h-0 min-w-0">
+          {/* Mobile Layout */}
+          <div className="md:hidden h-full w-full flex flex-col">
+            {/* Mobile Top Panel - Preview */}
+            <div className="h-1/2 min-h-0 p-2">
+              <PreviewPanel />
+            </div>
+            
+            {/* Mobile Bottom Panel - Timeline and Tools */}
+            <div className="h-1/2 min-h-0 flex flex-col">
+              {/* Timeline */}
+              <div className="h-2/5 min-h-0 px-2 pb-1">
+                <MobileTimelineWrapper />
+              </div>
+              
+              {/* Tools Panel with Tabs */}
+              <div className="h-3/5 min-h-0">
+                <MobileEditorTabs />
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop Layout */}
           <ResizablePanelGroup
             direction="vertical"
-            className="h-full w-full gap-1"
+            className="hidden md:flex h-full w-full gap-1"
           >
             <ResizablePanel
               defaultSize={mainContent}

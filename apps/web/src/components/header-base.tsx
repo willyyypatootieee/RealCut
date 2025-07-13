@@ -29,13 +29,13 @@ export function HeaderBase({
 
   return (
     <header
-      className={cn("px-6 h-14 flex justify-between items-center", className)}
+      className={cn("px-3 sm:px-6 h-14 flex justify-between items-center", className)}
     >
-      {leftContent && <div className="flex items-center">{leftContent}</div>}
+      {leftContent && <div className="flex items-center flex-1">{leftContent}</div>}
       {centerContent && (
-        <div className="flex items-center">{centerContent}</div>
+        <div className="flex items-center flex-shrink-0">{centerContent}</div>
       )}
-      {rightContent && <div className="flex items-center">{rightContent}</div>}
+      {rightContent && <div className="flex items-center justify-end flex-1">{rightContent}</div>}
     </header>
   );
 }
