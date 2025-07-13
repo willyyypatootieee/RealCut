@@ -60,28 +60,24 @@ export default function Editor() {
     <EditorProvider>
       <div className="h-screen w-screen flex flex-col bg-background overflow-hidden">
         <EditorHeader />
-        <div className="flex-1 min-h-0 min-w-0">
+        <div className="flex-1 min-h-0 min-w-0 pb-[65px]">
           {/* Mobile Layout */}
           <MobileLayout className="h-full w-full flex flex-col">
             {/* Mobile Top Panel - Preview */}
             <div className="h-[45%] min-h-0 p-2">
               <PreviewPanel />
             </div>
-            
             {/* Mobile Bottom Panel - Timeline and Tools */}
             <div className="h-[55%] min-h-0 flex flex-col">
               {/* Timeline */}
-              <div className="h-[35%] min-h-0 px-2 pb-1">
+              <div className="h-full min-h-0 px-2 pb-1">
                 <MobileTimelineWrapper />
               </div>
-              
               {/* Tools Panel with Tabs - More space when expanded */}
-              <div className="h-[65%] min-h-0">
-                <MobileEditorTabs />
-              </div>
+              <MobileEditorTabs />
             </div>
           </MobileLayout>
-          
+
           {/* Desktop Layout */}
           <ResizablePanelGroup
             direction="vertical"
