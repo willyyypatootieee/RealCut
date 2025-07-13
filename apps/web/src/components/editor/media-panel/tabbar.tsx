@@ -61,7 +61,7 @@ export function TabBar() {
   }, []);
 
   return (
-    <div className="flex">
+    <div className="hidden md:flex">
       <ScrollButton
         direction="left"
         onClick={scrollToStart}

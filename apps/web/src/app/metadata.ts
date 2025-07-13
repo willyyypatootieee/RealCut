@@ -64,6 +64,7 @@ export const baseMetaData: Metadata = {
     appleWebApp: {
         capable: true,
         title: title,
+        statusBarStyle: 'black-translucent',
     },
     manifest: "/manifest.json",
     other: {

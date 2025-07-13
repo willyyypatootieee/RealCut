@@ -17,6 +17,7 @@ import { MobileEditorTabs } from "@/components/mobile-editor-tabs";
 import { usePanelStore } from "@/stores/panel-store";
 import { useProjectStore } from "@/stores/project-store";
 import { EditorProvider } from "@/components/editor-provider";
+import { MobileLayout } from "@/components/mobile-layout";
 import { usePlaybackControls } from "@/hooks/use-playback-controls";
 
 export default function Editor() {
@@ -61,25 +62,25 @@ export default function Editor() {
         <EditorHeader />
         <div className="flex-1 min-h-0 min-w-0">
           {/* Mobile Layout */}
-          <div className="md:hidden h-full w-full flex flex-col">
+          <MobileLayout className="h-full w-full flex flex-col">
             {/* Mobile Top Panel - Preview */}
-            <div className="h-1/2 min-h-0 p-2">
+            <div className="h-[45%] min-h-0 p-2">
               <PreviewPanel />
             </div>
             
             {/* Mobile Bottom Panel - Timeline and Tools */}
-            <div className="h-1/2 min-h-0 flex flex-col">
+            <div className="h-[55%] min-h-0 flex flex-col">
               {/* Timeline */}
-              <div className="h-2/5 min-h-0 px-2 pb-1">
+              <div className="h-[35%] min-h-0 px-2 pb-1">
                 <MobileTimelineWrapper />
               </div>
               
-              {/* Tools Panel with Tabs */}
-              <div className="h-3/5 min-h-0">
+              {/* Tools Panel with Tabs - More space when expanded */}
+              <div className="h-[65%] min-h-0">
                 <MobileEditorTabs />
               </div>
             </div>
-          </div>
+          </MobileLayout>
           
           {/* Desktop Layout */}
           <ResizablePanelGroup

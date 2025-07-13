@@ -43,15 +43,29 @@ export function MobileTimelineWrapper({ className }: MobileTimelineWrapperProps)
             scroll-behavior: smooth;
           }
           
-          /* Hide track labels on very small screens */
-          @media (max-width: 480px) {
-            .timeline-track-labels {
-              width: 60px;
-            }
-            
-            .timeline-track-label-text {
-              display: none;
-            }
+          /* Responsive timeline toolbar */
+          .timeline-toolbar {
+            padding: 0.25rem;
+          }
+          
+          .timeline-toolbar button {
+            margin: 0 1px;
+          }
+        }
+        
+        /* Very small screens */
+        @media (max-width: 480px) {
+          .timeline-track-labels {
+            width: 60px;
+          }
+          
+          .timeline-track-label-text {
+            display: none;
+          }
+          
+          /* Hide even more toolbar items on very small screens */
+          .timeline-toolbar .tooltip-trigger:nth-child(n+6) {
+            display: none;
           }
         }
       `}</style>
